@@ -1,4 +1,4 @@
-FROM python:3.10-slim
+FROM openjdk:17
 WORKDIR /app
-COPY . .
-CMD ["python", "app.py"]
+COPY target/java-devops-demo-1.0.jar app.jar
+ENTRYPOINT ["java", "-jar", "app.jar"]
